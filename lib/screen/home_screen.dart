@@ -46,6 +46,8 @@ class _HomeScreenState extends State<HomeScreen> {
           final String todoId = response.body;
           // Navigator.pushReplacementNamed(context, '/todo/$todoId');
           fetchTodos();
+          _title.clear();
+          _description.clear();
         } else {
           throw Exception('Failed to create todo');
         }
