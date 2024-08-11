@@ -159,6 +159,9 @@ class _HomeScreenState extends State<HomeScreen> {
               itemCount: _todos.length,
               itemBuilder: (context, index) {
                 return ListTile(
+                  onTap: () {
+                    Navigator.pushNamed(context, '/todo', arguments: {'id': _todos[index].id});
+                  },
                   title: Text(_todos[index].title),
                   subtitle: Text(_todos[index].description),
                 );
